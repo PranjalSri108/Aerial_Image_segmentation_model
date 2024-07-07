@@ -1,40 +1,11 @@
 import streamlit as st
-import subprocess
-import sys
-
-# Function to install required packages
-def install_packages():
-    packages = [
-        "torch",
-        "opencv-python",
-        "numpy",
-        "albumentations",
-        "Pillow",
-        "matplotlib",
-        "segmentation-models-pytorch"
-    ]
-    try:
-        for package in packages:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        st.success("Required packages installed successfully!")
-    except subprocess.CalledProcessError:
-        st.error("Failed to install required packages. Please check your internet connection and try again.")
-        st.stop()
-
-# Check if required packages are installed
-try:
-    import torch
-    import cv2
-    import numpy as np
-    import albumentations as A
-    from PIL import Image
-    import matplotlib.pyplot as plt
-    import segmentation_models_pytorch as smp
-except ImportError:
-    st.warning("Some required packages are missing. Installing them now...")
-    install_packages()
-    st.experimental_rerun()
-
+import torch
+import cv2
+import numpy as np
+import albumentations as A
+from PIL import Image
+import matplotlib.pyplot as plt
+import segmentation_models_pytorch as smp
 import torch.nn as nn
 import time
 

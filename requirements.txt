@@ -1,0 +1,7 @@
+torch
+opencv-python-headless
+numpy
+albumentations
+Pillow
+matplotlib
+segmentation-models-pytorch

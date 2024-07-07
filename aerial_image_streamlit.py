@@ -4,8 +4,18 @@ import sys
 
 # Function to install required packages
 def install_packages():
+    packages = [
+        "torch",
+        "opencv-python",
+        "numpy",
+        "albumentations",
+        "Pillow",
+        "matplotlib",
+        "segmentation-models-pytorch"
+    ]
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+        for package in packages:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
         st.success("Required packages installed successfully!")
     except subprocess.CalledProcessError:
         st.error("Failed to install required packages. Please check your internet connection and try again.")
@@ -28,9 +38,7 @@ except ImportError:
 import torch.nn as nn
 import time
 
-# Rest of your Streamlit app code goes here
-# (Include all the code from the previous version, starting from the title)
-
+# Streamlit app title
 st.title('Road Segmentation Model')
 
 # Model parameters
@@ -53,7 +61,6 @@ class SegmentationModel(nn.Module):
     def forward(self, images):
         return self.backbone(images)
 
-# ... (rest of your code)
 # Load the pre-trained model
 @st.cache_resource
 def load_model():

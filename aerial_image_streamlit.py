@@ -10,7 +10,7 @@ import torch.nn as nn
 import time
 
 # Streamlit app title
-st.title('Road Segmentation Model')
+st.title('Road Segmentation Model :earth_africa:')
 
 # Model parameters
 IMG_SIZE = 512

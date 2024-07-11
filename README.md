@@ -20,3 +20,5 @@ This project implements a deep learning model for road segmentation using a U-Ne
 - OpenCV and Matplotlib for image processing and visualization
 
 This project demonstrates the entire workflow of a segmentation task, from data preparation to model training and result visualization. It's designed to be run in a Google Colab environment, making it accessible and easy to execute without extensive local setup.
+
+![alt text](https://github.com/PranjalSri108/Aerial_Image_segmentation_model/blob/main/Streamlit_deployed_app.png?raw=true)
